@@ -2,8 +2,8 @@
 
 :root {
   --image-height: 90vh;
-  --content-width: 800px;
-  --transition-delay: 0.3s;
+  --content-width: 50rem;
+  --transition-delay: 0.5s;
 }
 
 * {
@@ -12,7 +12,9 @@
 
 .page {
   max-width: min(100%, var(--content-width));
-  margin: 60px auto;
+  margin: 5rem auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
   font-family: 'Comic Neue', cursive;
 }
 
