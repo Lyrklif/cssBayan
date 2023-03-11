@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+  --image-height: 90vh;
+  --content-width: 800px;
+  --transition-delay: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: min(100%, var(--content-width));
+  margin: 60px auto;
+  font-family: 'Comic Neue', cursive;
+}
+
+.accordion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 3px solid black;
+  font-weight: 700;
+}
+
+.accordion__icon {
+  font-size: 2rem;
+  transition: transform var(--transition-delay);
+}
+
+.accordion-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.accordion {
+  cursor: pointer;
+}
+
+.accordion__body {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height var(--transition-delay);
+}
+
+.accordion__image {
+  max-width: min(100%, var(--content-width));
+  max-height: var(--image-height);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.accordion:hover .accordion__icon {
+  transform: rotate(45deg);
+}
+
+.accordion:hover .accordion__body {
+  max-height: var(--image-height);
+}
