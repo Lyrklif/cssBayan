@@ -54,10 +54,12 @@
   display: block;
 }
 
-.accordion:hover .accordion__icon {
-  transform: rotate(45deg);
-}
+@media (hover: hover) {
+  .accordion:hover .accordion__icon {
+    transform: rotate(45deg);
+  }
 
-.accordion:hover .accordion__body {
-  max-height: var(--image-height);
+  .accordion:hover .accordion__body {
+    max-height: var(--image-height);
+  }
 }
