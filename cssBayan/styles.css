@@ -21,6 +21,7 @@
 
 .page__title {
   font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .accordion__content {
@@ -37,10 +38,12 @@
   color: var(--primary-color);
   user-select: none;
   transition: color var(--transition-delay);
+  font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .accordion__icon {
-  font-size: 2rem;
+  font-size: 1.5em;
+  line-height: 1em;
   opacity: 0;
   transition: transform var(--transition-delay), opacity var(--transition-delay);
 }
