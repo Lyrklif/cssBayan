@@ -22,8 +22,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 3px solid black;
+  border-top: 0.2rem solid black;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .accordion__icon {
@@ -36,14 +37,12 @@
   padding-left: 0;
 }
 
-.accordion {
-  cursor: pointer;
-}
-
 .accordion__body {
+  display: block;
   max-height: 0px;
   overflow: hidden;
   transition: max-height var(--transition-delay);
+  cursor: pointer;
 }
 
 .accordion__image {
@@ -52,6 +51,18 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked ~ .accordion__header .accordion__icon {
+  transform: rotate(45deg);
+}
+
+.accordion__input:checked ~ .accordion__body {
+  max-height: var(--image-height);
 }
 
 @media (hover: hover) {
