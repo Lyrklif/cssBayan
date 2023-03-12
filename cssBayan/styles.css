@@ -12,9 +12,9 @@
 
 .page {
   max-width: min(100%, var(--content-width));
-  margin: 5rem auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin: 7rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-family: 'Comic Neue', cursive;
 }
 
@@ -41,7 +41,9 @@
   display: block;
   max-height: 0px;
   overflow: hidden;
-  transition: max-height var(--transition-delay);
+  transition: transform var(--transition-delay), max-height var(--transition-delay);
+  transform: scale(0);
+  transform-origin: top center;
   cursor: pointer;
 }
 
@@ -63,6 +65,7 @@
 
 .accordion__input:checked ~ .accordion__body {
   max-height: var(--image-height);
+  transform: scale(1);
 }
 
 @media (hover: hover) {
@@ -72,5 +75,6 @@
 
   .accordion:hover .accordion__body {
     max-height: var(--image-height);
+    transform: scale(1);
   }
 }
