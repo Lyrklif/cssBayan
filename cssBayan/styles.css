@@ -29,7 +29,8 @@
 
 .accordion__icon {
   font-size: 2rem;
-  transition: transform var(--transition-delay);
+  opacity: 0;
+  transition: transform var(--transition-delay), opacity var(--transition-delay);
 }
 
 .accordion-list {
@@ -69,6 +70,10 @@
 }
 
 @media (hover: hover) {
+  .accordion-list:hover .accordion__icon {
+    opacity: 1;
+  }
+
   .accordion:hover .accordion__icon {
     transform: rotate(45deg);
   }
