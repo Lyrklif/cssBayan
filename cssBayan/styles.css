@@ -4,6 +4,7 @@
   --image-height: 90vh;
   --content-width: 50rem;
   --transition-delay: 0.5s;
+  --primary-color: dodgerblue;
 }
 
 * {
@@ -22,9 +23,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 0.2rem solid black;
+  border-top: 0.1rem solid black;
   font-weight: 700;
   cursor: pointer;
+  color: var(--primary-color);
+  user-select: none;
+  transition: color var(--transition-delay);
 }
 
 .accordion__icon {
@@ -64,6 +68,10 @@
   transform: rotate(45deg);
 }
 
+.accordion__input:checked ~ .accordion__header {
+  color: inherit;
+}
+
 .accordion__input:checked ~ .accordion__body {
   max-height: var(--image-height);
   transform: scale(1);
@@ -72,6 +80,10 @@
 @media (hover: hover) {
   .accordion-list:hover .accordion__icon {
     opacity: 1;
+  }
+
+  .accordion-list:hover .accordion__header {
+    color: inherit;
   }
 
   .accordion:hover .accordion__icon {
