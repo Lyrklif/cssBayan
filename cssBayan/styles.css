@@ -19,6 +19,14 @@
   font-family: 'Comic Neue', cursive;
 }
 
+.page__title {
+  font-weight: 700;
+}
+
+.accordion__content {
+  display: block;
+}
+
 .accordion__header {
   display: flex;
   justify-content: space-between;
@@ -64,15 +72,15 @@
   display: none;
 }
 
-.accordion__input:checked ~ .accordion__header .accordion__icon {
+.accordion__input:checked + .accordion__content .accordion__icon {
   transform: rotate(45deg);
 }
 
-.accordion__input:checked ~ .accordion__header {
+.accordion__input:checked + .accordion__content .accordion__header {
   color: inherit;
 }
 
-.accordion__input:checked ~ .accordion__body {
+.accordion__input:checked + .accordion__content .accordion__body {
   max-height: var(--image-height);
   transform: scale(1);
 }
@@ -94,4 +102,8 @@
     max-height: var(--image-height);
     transform: scale(1);
   }
+}
+
+.accordion__content:active .accordion__header {
+  color: var(--primary-color);
 }
