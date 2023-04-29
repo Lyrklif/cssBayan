@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+  --image-height: 90vh;
+  --content-width: 50rem;
+  --transition-delay: 0.5s;
+  --primary-color: dodgerblue;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: min(100%, var(--content-width));
+  margin: 7rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: 'Comic Neue', cursive;
+}
+
+.page__title {
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.accordion__content {
+  display: block;
+}
+
+.accordion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.1rem solid black;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--primary-color);
+  user-select: none;
+  transition: color var(--transition-delay);
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.accordion__icon {
+  font-size: 1.5em;
+  line-height: 1em;
+  opacity: 0;
+  transition: transform var(--transition-delay), opacity var(--transition-delay);
+}
+
+.accordion-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.accordion__body {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: transform var(--transition-delay), max-height var(--transition-delay);
+  transform: scale(0);
+  transform-origin: top center;
+  cursor: pointer;
+}
+
+.accordion__image {
+  max-width: min(100%, var(--content-width));
+  max-height: var(--image-height);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked + .accordion__content .accordion__icon {
+  transform: rotate(45deg);
+}
+
+.accordion__input:checked + .accordion__content .accordion__header {
+  color: inherit;
+}
+
+.accordion__input:checked + .accordion__content .accordion__body {
+  max-height: var(--image-height);
+  transform: scale(1);
+}
+
+@media (hover: hover) {
+  .accordion-list:hover .accordion__icon {
+    opacity: 1;
+  }
+
+  .accordion-list:hover .accordion__header {
+    color: inherit;
+  }
+
+  .accordion:hover .accordion__icon {
+    transform: rotate(45deg);
+  }
+
+  .accordion:hover .accordion__body {
+    max-height: var(--image-height);
+    transform: scale(1);
+  }
+}
+
+.accordion__content:active .accordion__header {
+  color: var(--primary-color);
+}
